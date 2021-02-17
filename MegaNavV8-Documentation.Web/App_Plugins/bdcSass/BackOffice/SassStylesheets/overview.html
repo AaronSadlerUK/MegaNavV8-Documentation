@@ -1,0 +1,29 @@
+<div ng-controller="Humaniise.Umbraco.Editors.SassStylesheets.OverviewController as vm" class="clearfix">
+    <umb-editor-view footer="false">
+
+        <umb-editor-header
+            name="'Sass Stylesheets'"
+            name-locked="true"
+            hide-icon="true"
+            hide-description="true"
+            hide-alias="true">
+        </umb-editor-header>
+
+        <umb-editor-container>
+            <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
+
+            <div class="umb-logviewer" ng-show="!vm.loading">
+                <div class="umb-logviewer__main-content">
+                    <umb-box>
+                        <umb-box-header title="Please be careful with Folder and File names"/>
+                        <umb-box-content>
+                            <p>Saving a scss file will just save that file, Publishing will compile it into a css file within the 'Stylesheets' section.</p>
+                            <p>Compiled css files will be created with the same folder path that they have within this section, replacing any existing file that matches its path and name, so please use this area to create any 'Rich Text Editor' values you require as any created within the 'Stylesheets' section will be replaced on publish.</p>
+                        </umb-box-content>
+                    </umb-box>
+                </div>
+            </div>
+
+        </umb-editor-container>
+    </umb-editor-view>
+</div>

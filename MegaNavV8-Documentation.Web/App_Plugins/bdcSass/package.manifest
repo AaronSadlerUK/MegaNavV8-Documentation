@@ -1,0 +1,10 @@
+{
+  // array of files we want to inject into the application on app_start
+  "javascript": [
+    "~/App_Plugins/bdcSass/Services/sassstylesheets.resource.js",
+    "~/App_Plugins/bdcSass/Controllers/overview.controller.js",
+    "~/App_Plugins/bdcSass/Controllers/create.controller.js",
+    "~/App_Plugins/bdcSass/Controllers/edit.controller.js",
+    "~/App_Plugins/bdcSass/Controllers/delete.controller.js"
+  ]
+}
