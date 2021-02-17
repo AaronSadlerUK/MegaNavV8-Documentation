@@ -371,3 +371,4 @@ healthchecksdb
 
 # Ignore the Models Builder models out of date flag
 **/App_Data/Models/ood.flag
+MegaNavV8-Documentation.Web/App_Data/xStatic/output/
