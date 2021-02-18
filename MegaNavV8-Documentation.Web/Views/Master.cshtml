@@ -62,7 +62,10 @@
                             <li class="list-inline-item"><a href="@sm.Link.Url" target="@sm.Link.Target"><i class="@sm.Icon fa-fw"></i></a></li>
                         }
                     </ul><!--//social-list-->
-                    <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderdocs-free-bootstrap-4-documentation-template-for-software-projects/" class="btn btn-primary d-none d-lg-flex">Download</a>
+                    @if (Umbraco.GlobalSettings().HasValue("topBarButton"))
+                    {
+                        <a href="@Umbraco.GlobalSettings().TopBarButton.Url" target="@Umbraco.GlobalSettings().TopBarButton.Target" class="btn btn-primary d-none d-lg-flex">@Umbraco.GlobalSettings().TopBarButton.Name</a>
+                    }
                 </div><!--//docs-top-utilities-->
             </div><!--//container-->
         </div><!--//branding-->

@@ -78,5 +78,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
 		[ImplementPropertyType("socialMediaAccounts")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SocialMedia> SocialMediaAccounts => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SocialMedia>>("socialMediaAccounts");
+
+		///<summary>
+		/// Top Bar Button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("topBarButton")]
+		public global::Umbraco.Web.Models.Link TopBarButton => this.Value<global::Umbraco.Web.Models.Link>("topBarButton");
 	}
 }
