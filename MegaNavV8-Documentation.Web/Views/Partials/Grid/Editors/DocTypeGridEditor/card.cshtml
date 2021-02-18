@@ -1,0 +1,28 @@
+﻿@inherits UmbracoViewPage<Card>
+<div class="card shadow-sm">
+    <div class="card-body">
+        @if (Model.HasValue("icon") || Model.HasValue("title"))
+        {
+            <h5 class="card-title mb-3">
+                @if (Model.HasValue("icon"))
+                {
+                    <span class="theme-icon-holder card-icon-holder mr-2">
+                        <i class="@Model.Icon"></i>
+                    </span>
+                }
+
+                @if (Model.HasValue("title"))
+                {
+                    <span class="card-title-text">@Model.Title</span>
+                }
+            </h5>
+        }
+
+        @if (Model.HasValue("text"))
+        {
+            <div class="card-text">
+                @Model.Text
+            </div>
+        }
+    </div>
+</div>

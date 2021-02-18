@@ -1,0 +1,71 @@
+﻿@inherits UmbracoViewPage<GridDataModel>
+@using Skybrud.Umbraco.GridData;
+@using System.Linq
+@if (Model != null && Model.Sections.Any())
+{
+    foreach (var s in Model.Sections)
+    {
+        foreach (var row in s.Rows)
+        {
+            @RenderContainers(row)
+        }
+    }
+}
+@helper RenderContainers(GridRow row)
+{
+    string customClasses = null;
+    if (row.HasConfig && row.Config.TryGetValue("class", out var classes))
+    {
+        var stringArray = classes.Split(',');
+        customClasses = string.Join(" ", stringArray);
+    }
+
+    string backgroundColour = null;
+    if (row.HasConfig && row.Config.TryGetValue("backgroundColour", out var bgc))
+    {
+        backgroundColour = $"background-color: {bgc};";
+    }
+
+    <div class="row @customClasses" style="@backgroundColour">
+        @RenderRow(row.Areas)
+    </div>
+}
+@helper RenderRow(IEnumerable<GridArea> areas)
+{
+    foreach (GridArea area in areas)
+    {
+        string customClasses = null;
+        if (area.HasConfig && area.Config.TryGetValue("class", out var classes))
+        {
+            customClasses = $"{classes}";
+        }
+
+        string backgroundColour = null;
+        if (area.HasConfig && area.Config.TryGetValue("backgroundColour", out var bgc))
+        {
+            backgroundColour = $"background-color: {bgc};";
+        }
+
+        string animation = null;
+        if (area.HasConfig && area.Config.TryGetValue("animation", out var a))
+        {
+            animation = $"data-swiper-animation=animate__{a}";
+        }
+
+        var columns = $"col-lg-{area.Grid}";
+
+        <div class="@columns @customClasses" @animation style="@backgroundColour">
+            @RenderControls(area)
+        </div>
+    }
+}
+@helper RenderControls(GridArea area)
+{
+    foreach (var control in area.Controls)
+    {
+        if (control != null && control.Editor != null && control.Editor.View != null)
+        {
+            <text>@Html.Partial("grid/editors/base", control.JObject)</text>
+        }
+    }
+}
