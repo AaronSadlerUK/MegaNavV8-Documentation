@@ -338,6 +338,11 @@
     <Content Include="App_Plugins\bdcSass\Controllers\edit.controller.js" />
     <Content Include="App_Plugins\bdcSass\Controllers\overview.controller.js" />
     <Content Include="App_Plugins\bdcSass\Services\sassstylesheets.resource.js" />
+    <Content Include="App_Plugins\ColorPickerU8\ColorPicker.html" />
+    <Content Include="App_Plugins\ColorPickerU8\ColorPickerController.js" />
+    <Content Include="App_Plugins\ColorPickerU8\lib\prevalue\preferredFormat.html" />
+    <Content Include="App_Plugins\ColorPickerU8\lib\spectrum\spectrum.css" />
+    <Content Include="App_Plugins\ColorPickerU8\lib\spectrum\spectrum.js" />
     <Content Include="App_Plugins\DocTypeGridEditor\Css\doctypegrideditor.css" />
     <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.controllers.js" />
     <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.directives.js" />
@@ -348,6 +353,12 @@
     <Content Include="App_Plugins\DocTypeGridEditor\Lang\en-US.xml" />
     <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.dialog.html" />
     <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.html" />
+    <Content Include="App_Plugins\FaIconpicker\controllers\faIconPicker.controller.js" />
+    <Content Include="App_Plugins\FaIconpicker\controllers\faIconPicker.dialog.controller.js" />
+    <Content Include="App_Plugins\FaIconpicker\css\main.css" />
+    <Content Include="App_Plugins\FaIconpicker\resources\faIconResources.js" />
+    <Content Include="App_Plugins\FaIconpicker\views\faIconPicker.dialog.html" />
+    <Content Include="App_Plugins\FaIconpicker\views\faIconPicker.html" />
     <Content Include="App_Plugins\MeganavV8\Css\editor.css" />
     <Content Include="App_Plugins\MeganavV8\Js\angular-ui-tree.js" />
     <Content Include="App_Plugins\MeganavV8\Js\meganavv8.controller.js" />
@@ -2827,17 +2838,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\Models\Card.generated.cs" />
-    <Compile Include="App_Data\Models\DocumentationPage.generated.cs" />
-    <Compile Include="App_Data\Models\File.generated.cs" />
-    <Compile Include="App_Data\Models\Folder.generated.cs" />
-    <Compile Include="App_Data\Models\GlobalSettings.generated.cs" />
-    <Compile Include="App_Data\Models\Home.generated.cs" />
-    <Compile Include="App_Data\Models\Image.generated.cs" />
-    <Compile Include="App_Data\Models\Member.generated.cs" />
-    <Compile Include="App_Data\Models\Menu.generated.cs" />
-    <Compile Include="App_Data\Models\MenuFolder.generated.cs" />
-    <Compile Include="App_Data\Models\SocialMedia.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2861,6 +2861,8 @@
     <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditorPreviewer.cshtml" />
     <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditor.cshtml" />
     <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
+    <Content Include="App_Plugins\ColorPickerU8\package.manifest" />
+    <Content Include="App_Plugins\FaIconpicker\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -2972,12 +2974,21 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Partials\TypedGrid\Bootstrap4.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\DocTypeGridEditor\card.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\DocTypeGridEditor\search.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\DocTypeGridEditor\title.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\DocTypeGridEditor\richText.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MegaNavV8-Documentation.Core\MegaNavV8-Documentation.Core.csproj">
+      <Project>{837d6a39-91b6-4d66-ad16-7ac115b01de3}</Project>
+      <Name>MegaNavV8-Documentation.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

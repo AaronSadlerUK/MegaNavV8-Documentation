@@ -19,43 +19,57 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Social Media</summary>
-	[PublishedModel("socialMedia")]
-	public partial class SocialMedia : PublishedElementModel
+	/// <summary>Title</summary>
+	[PublishedModel("titleBlock")]
+	public partial class TitleBlock : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		public new const string ModelTypeAlias = "socialMedia";
+		public new const string ModelTypeAlias = "titleBlock";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SocialMedia, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TitleBlock, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public SocialMedia(IPublishedElement content)
+		public TitleBlock(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Name
+		/// Custom Classes
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		[ImplementPropertyType("accountType")]
-		public string AccountType => this.Value<string>("accountType");
+		[ImplementPropertyType("customClasses")]
+		public string CustomClasses => this.Value<string>("customClasses");
 
 		///<summary>
-		/// Link
+		/// Size
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		[ImplementPropertyType("link")]
-		public global::Umbraco.Web.Models.Link Link => this.Value<global::Umbraco.Web.Models.Link>("link");
+		[ImplementPropertyType("size")]
+		public string Size => this.Value<string>("size");
+
+		///<summary>
+		/// Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("text")]
+		public string Text => this.Value<string>("text");
+
+		///<summary>
+		/// Text Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("textColour")]
+		public object TextColour => this.Value("textColour");
 	}
 }

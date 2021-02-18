@@ -1,0 +1,15 @@
+﻿@inherits UmbracoViewPage<TitleBlock>
+@{
+    var customClasses = string.Empty;
+    if (Model.HasValue("customClasses"))
+    {
+        customClasses = Model.CustomClasses;
+    }
+
+    var textColour = string.Empty;
+    if (Model.HasValue(""))
+    {
+        textColour = $"color: {Model.TextColour};";
+    }
+}
+<@Model.Size class="@customClasses" style="@textColour">@Model.Text</@Model.Size>

@@ -1,0 +1,20 @@
+﻿@inherits UmbracoViewPage<SearchBlock>
+@{
+    var placeholder = string.Empty;
+    if (Model.HasValue("placeholder"))
+    {
+        placeholder = Model.Placeholder;
+    }
+
+    var submitButtonText = "Search";
+    if (Model.HasValue(""))
+    {
+        submitButtonText = Model.SubmitButtonText;
+    }
+}
+<div class="main-search-box pt-3 d-block mx-auto">
+    <form target="@Model.SearchResultsPage.Url" class="search-form w-100">
+        <input type="text" placeholder="@placeholder" name="q" class="form-control search-input">
+        <button type="submit" class="btn search-btn" value="@submitButtonText"><i class="fas fa-search"></i></button>
+    </form>
+</div>

@@ -19,29 +19,43 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Documentation Page</summary>
-	[PublishedModel("documentationPage")]
-	public partial class DocumentationPage : PublishedContentModel
+	/// <summary>Home</summary>
+	[PublishedModel("home")]
+	public partial class Home : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		public new const string ModelTypeAlias = "documentationPage";
+		public new const string ModelTypeAlias = "home";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<DocumentationPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public DocumentationPage(IPublishedContent content)
+		public Home(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Content Blocks
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("contentBlocks")]
+		public global::Skybrud.Umbraco.GridData.GridDataModel ContentBlocks => this.Value<global::Skybrud.Umbraco.GridData.GridDataModel>("contentBlocks");
+
+		///<summary>
+		/// Header Blocks
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("headerBlocks")]
+		public global::Skybrud.Umbraco.GridData.GridDataModel HeaderBlocks => this.Value<global::Skybrud.Umbraco.GridData.GridDataModel>("headerBlocks");
 	}
 }
